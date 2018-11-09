@@ -1,0 +1,21 @@
+.search{
+  float: right;
+}
+.controls{
+  margin-top: 100px;
+}
+
+.gap{
+  margin-top: 50px;
+}
+
+.button {
+  background-color: #008CBA;}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pagination .active .text{
+  cursor: text;
+}

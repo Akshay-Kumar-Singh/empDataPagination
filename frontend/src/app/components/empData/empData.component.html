@@ -1,0 +1,56 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<header>
+  <input type="button" value="All Data" class="btn btn-info" name="alldata" (click)="paginatedData(1,0)">
+  <input type="button" value="Enter Data" class="btn btn-success" name="inputdata" (click)="inputdata()">
+  <div class="search">
+    <input type=text class="btn btn-success" [disabled]=true value="No. of Distinct Salary ={{SalCount}}">
+    <input type="text" #rank (keydown.enter)="paginatedData(1,rank.value)">
+    <input type="button" value="Search" name="button" class="btn btn-primary" (click)="paginatedData(1,rank.value)">
+  </div>
+</header>
+
+<div>
+  <div class="gap">
+  </div>
+  <table class="table table-striped">
+    <th>EmployeeId</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Salary</th>
+
+    <tr *ngFor='let data of this.PagiData'>
+      <!-- <tr *ngFor='let data of this.myData | paginate: {itemsPerPage: 10, currentPage: p2}'> -->
+      <td>{{data.EmpSalary.id}}</td>
+      <td>{{data.EmpSalary.Name}}</td>
+      <td>{{data.EmpSalary.Address}}</td>
+      <td>{{data.EmpSalary.Salary}}</td>
+    </tr>
+  </table>
+  <div class="controls" align=center>
+    <div class="has-text-centered">
+      <ul class="pagination">
+        <li class="pointer" [class.disabled]="!isFirstPage()">
+          <a (click)="first()">First</a>
+        </li>
+        <li class="pointer" [class.disabled]="!isFirstPage()">
+          <a (click)="previous()">Previous</a>
+        </li>&ensp;
+        <li class="active">
+          <a class="text">{{currentPage}}</a>
+        </li>
+        &ensp;
+        <li class="pointer" [class.disabled]="!isLastPage()">
+          <a (click)="next()">Next</a>
+        </li>
+        <li class="pointer" [class.disabled]="!isLastPage()">
+          <a (click)="lastPage()">Last</a>
+        </li>
+        <!-- <pagination-controls (pageChange)="p=$event"></pagination-controls> -->
+      </ul>
+    </div>
+  </div>
+</div>

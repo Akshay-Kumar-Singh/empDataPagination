@@ -1,0 +1,19 @@
+/* .not-found {
+  background-image: url(errorpagenotfound.png);
+  color: #ffffff;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: auto;
+  background-size: cover;
+} */
+
+.not-found {
+  background-image: url(errorpagenotfound.png);
+  background-repeat: no-repeat;
+  height: 662px;
+  width: auto;
+  background-size: cover;
+
+}

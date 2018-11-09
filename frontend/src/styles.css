@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/* body {
+  height: calc(100vh - 20px);
+  width: 107%;
+} */
+.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+.ng-valid:not(form) {
+  border-left: 5px solid green;
+}
